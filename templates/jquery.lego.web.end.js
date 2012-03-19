@@ -1,2 +1,3 @@
 
+    $.lego.parser = legoparser;
 }($));
