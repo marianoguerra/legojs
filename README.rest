@@ -25,10 +25,17 @@ for the minification you will need uglifyjs::
 
         npm install -g uglifyjs
 
+try it
+------
+
+http://marianoguerra.github.com/legojs/
+
 test it
 -------
 
-open test/index.html in your browser
+http://marianoguerra.github.com/legojs/test
+
+or open test/index.html in your browser
 
 author
 ------

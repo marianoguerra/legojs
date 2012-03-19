@@ -79,6 +79,8 @@
                             } else if (key[0] === "@") {
                                 attr = key.slice(1);
                                 $tag.data(attr, options[key]);
+                            } else if (key === "class" && $.isArray(options[key])) {
+                                $tag.attr(key, options[key].join(" "));
                             } else {
                                 $tag.attr(key, options[key]);
                             }
