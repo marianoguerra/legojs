@@ -33,7 +33,7 @@ strong{
  padding: 1em;
 }
 
-label, #code{
+.ide label, #code, .output{
  margin-left: 10%;
 }
 
@@ -42,3 +42,12 @@ label, #code{
  text-align: center;
 }
 
+#html, #raw, #tree{
+ width: 98%;
+ margin: 1%;
+}
+
+.output label{
+ margin: 0;
+ font-weight: bold;
+}
