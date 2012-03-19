@@ -24,9 +24,9 @@
         } else if ($.isArray(tag)) {
             if (tag.length === 1) {
                 if (typeof(tag[0]) === "string") {
-                    $.lego({"div": {"$childs": tag}});
+                    return $.lego({"div": {"$childs": tag}});
                 } else {
-                    $.lego(tag[0]);
+                    return $.lego(tag[0]);
                 }
             } else {
                 return $.map(tag, function (item) {
