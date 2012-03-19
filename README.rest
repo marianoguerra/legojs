@@ -1,0 +1,42 @@
+legojs - generate HTML with CSS-like selectors
+==============================================
+
+legojs is an js module that allows to generate complex HTML using
+a syntax that is similar to CSS selectors.
+
+legojs is inspired by zen-coding: https://code.google.com/p/zen-coding/
+
+get it
+------
+
+::
+
+    git clone https://github.com/marianoguerra/legojs
+
+build it
+--------
+
+::
+
+    cd legojs
+    ./build.sh
+    
+for the minification you will need uglifyjs::
+
+        npm install -g uglifyjs
+
+test it
+-------
+
+open test/index.html in your browser
+
+author
+------
+
+Mariano Guerra
+
+license
+-------
+
+BSD (+ optional beer to the author)
+
