@@ -10,7 +10,7 @@ $(function () {
         var tree = $.lego.parser.parse(code);
 
         $("#tree").html(JSON.stringify(tree, null, 2));
-        $("#html").html($.lego(code)[0]);
+        $("#html").html($.lego(code));
         $("#raw").text($("#html").html());
     }
 
@@ -35,6 +35,6 @@ $(function () {
     };
 
     for (key in snippets) {
-        $select.append($.lego('option[value="' + key + '"] {' + key + '}')[0]);
+        $select.append($.lego('option[value="' + key + '"] {' + key + '}'));
     }
 });
