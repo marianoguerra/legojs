@@ -23,13 +23,20 @@ define(["path/to/jquery"], function ($) {
     $.lego = function (tag) {
         var key, $tag, i, childs, attr, options;
 
-        // if tag is an object get the key as tag and value as options
         if (typeof(tag) === "string") {
             return $.lego(legoparser.parse(tag));
         } else if ($.isArray(tag)) {
-            return $.map(tag, function (item) {
-                return $.lego(item);
-            });
+            if (tag.length === 1) {
+                if (typeof(tag[0]) === "string") {
+                    $.lego({"div": {"$childs": tag}});
+                } else {
+                    $.lego(tag[0]);
+                }
+            } else {
+                return $.map(tag, function (item) {
+                    return $.lego(item);
+                });
+            }
         } else {
             key = getFirstKey(tag);
             options = tag[key];
@@ -76,6 +83,8 @@ define(["path/to/jquery"], function ($) {
                             } else if (key[0] === "@") {
                                 attr = key.slice(1);
                                 $tag.data(attr, options[key]);
+                            } else if (key === "class" && $.isArray(options[key])) {
+                                $tag.attr(key, options[key].join(" "));
                             } else {
                                 $tag.attr(key, options[key]);
                             }
