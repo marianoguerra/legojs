@@ -53,7 +53,7 @@ break;
 case 9: this.$ = [].concat($$[$0]); 
 break;
 case 10:
-            var i, items = []; size = parseInt($$[$0], 10), obj;
+            var i, items = [], size = parseInt($$[$0], 10), obj;
 
             for (i = 0; i < size; i += 1) {
                 obj = JSON.parse(JSON.stringify($$[$0-2]));

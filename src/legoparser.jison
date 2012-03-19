@@ -92,7 +92,7 @@ node_times
         { $$ = [].concat($1); }
     | node '*' NUMBER
         {
-            var i, items = []; size = parseInt($3, 10), obj;
+            var i, items = [], size = parseInt($3, 10), obj;
 
             for (i = 0; i < size; i += 1) {
                 obj = JSON.parse(JSON.stringify($1));
