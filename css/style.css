@@ -4,6 +4,7 @@ body{
  font-style: arial;
 }
 
+
 h1{
  text-align: center;
 }
@@ -13,12 +14,12 @@ p.main{
  text-align: center;
 }
 
-em{
+em, a{
  color: #2DA6FF;
 }
 
 strong{
- color: #AA0000;
+ color: #cc2222;
 }
 
 .ide{
@@ -50,4 +51,12 @@ strong{
 .output label{
  margin: 0;
  font-weight: bold;
+}
+
+#footer{
+ position: fixed;
+ font-size: small;
+ bottom: 1em;
+ width: 100%;
+ text-align: center;
 }
