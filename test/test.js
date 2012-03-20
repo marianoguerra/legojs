@@ -1,6 +1,6 @@
 (function () {
     function checkParse(expr, expected) {
-        var ast = $lego.parser.parse(expr);
+        var ast = $.lego.parser.parse(expr);
 
         deepEqual(ast, expected, expr);
     }
