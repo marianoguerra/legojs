@@ -22,17 +22,21 @@
         if (typeof(tag) === "string") {
             return $.lego(legoparser.parse(tag));
         } else if ($.isArray(tag)) {
+
             if (tag.length === 1) {
+
                 if (typeof(tag[0]) === "string") {
                     return $.lego({"div": {"$childs": tag}});
                 } else {
                     return $.lego(tag[0]);
                 }
+
             } else {
                 return $.map(tag, function (item) {
                     return $.lego(item);
                 });
             }
+
         } else {
             key = getFirstKey(tag);
             options = tag[key];
@@ -41,11 +45,13 @@
             $tag = $("<" + tag + ">");
 
             if (options) {
+
                 if (typeof options === "string") {
                     $tag.html(options);
                 } else {
 
                     for (key in options) {
+
                         if (key === "$childs") {
                             childs = options[key];
 
@@ -54,19 +60,23 @@
                             }
 
                             for (i = 0; i < childs.length; i += 1) {
+
                                 if ($.isPlainObject(childs[i])) {
                                     $.lego(childs[i]).appendTo($tag);
                                 } else {
                                     $tag.append(childs[i]);
                                 }
+
                             }
                         }
 
                         if (options.hasOwnProperty(key)) {
+
                             if (key[0] === "$") {
                                 attr = key.slice(1);
 
                                 if (attr !== "childs") {
+
                                     if ($.inArray(attr, events) !== -1) {
                                         $tag[attr](options[key]);
                                     } else if ($.isFunction(options[key])) {
@@ -74,6 +84,7 @@
                                     } else {
                                         $.lego.error("unknown internal attribute " + attr);
                                     }
+
                                 }
 
                             } else if (key[0] === "@") {
