@@ -19,7 +19,13 @@
 
   <div class="ide">
    <label for="code">write a <em>legojs</em> expression below and click <strong>run</strong></label>
-   <textarea id="code"></textarea>
+   <textarea id="code">
+div > (
+ (h1 > (img[src="img/lego.png" alt="lego"] + {js})) + 
+ p.main {HTML from CSS-like selectors} +
+ (p > ({write a } + em {legojs} + { expression below and click } + strong {run}))
+)
+   </textarea>
    <div class="buttons">
     <select id="snippets"></select>
     <button id="load">load</button>
