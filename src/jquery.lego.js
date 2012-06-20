@@ -1,6 +1,24 @@
+/*global define*/
+(function (root, factory) {
+    "use strict";
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery', 'legojs.parser'], function (jQuery, legoparser) {
+            // Also create a global in case some scripts
+            // that are loaded still are looking for
+            // a global even when an AMD loader is in use.
+            return (root.legojs = factory(jQuery, legoparser));
+        });
+    } else {
+        // Browser globals
+        root.legojs = factory(root.jQuery, root.legoparser);
+    }
+}(this, function ($, legoparser) {
+    "use strict";
+
     // if already defined don't redefine it
     if ($.lego) {
-        return $;
+        return $.lego;
     }
 
     var l, events = (
@@ -20,6 +38,7 @@
         var key, $tag, i, childs, attr, options;
 
         if (typeof(tag) === "string") {
+            // this will only be available if you import the real legoparser
             return $.lego(legoparser.parse(tag));
         } else if ($.isArray(tag)) {
 
@@ -104,3 +123,6 @@
         }
     };
 
+    $.lego.parser = legoparser;
+    return $.lego;
+}));

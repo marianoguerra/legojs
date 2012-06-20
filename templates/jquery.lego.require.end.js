@@ -1,5 +1,0 @@
-
-    $.lego.parser = legoparser;
-
-    return $;
-});

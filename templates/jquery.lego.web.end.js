@@ -1,3 +1,0 @@
-
-    $.lego.parser = legoparser;
-}($));

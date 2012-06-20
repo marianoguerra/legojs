@@ -1,3 +1,19 @@
+/*global define*/
+(function (root, factory) {
+    "use strict";
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], function () {
+            // Also create a global in case some scripts
+            // that are loaded still are looking for
+            // a global even when an AMD loader is in use.
+            return (root.legoparser = factory());
+        });
+    } else {
+        // Browser globals
+        root.legoparser = factory();
+    }
+}(this, function () {
 /* Jison generated parser */
 var legoparser = (function(){
 var parser = {trace: function trace() { },
@@ -479,6 +495,7 @@ next:function () {
             this._input = this._input.slice(match[0].length);
             this.matched += match[0];
             token = this.performAction.call(this, this.yy, this, rules[index],this.conditionStack[this.conditionStack.length-1]);
+            if (this.done && this._input) this.done = false;
             if (token) return token;
             else return;
         }
@@ -580,4 +597,5 @@ exports.main = function commonjsMain(args) {
 if (typeof module !== 'undefined' && require.main === module) {
   exports.main(typeof process !== 'undefined' ? process.argv.slice(1) : require("system").args);
 }
-}
+}    return legoparser;
+}));
