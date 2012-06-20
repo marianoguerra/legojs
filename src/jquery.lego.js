@@ -91,7 +91,7 @@
 
                         if (options.hasOwnProperty(key)) {
 
-                            if (key[0] === "$") {
+                            if (key.charAt(0) === "$") {
                                 attr = key.slice(1);
 
                                 if (attr !== "childs") {
@@ -106,7 +106,7 @@
 
                                 }
 
-                            } else if (key[0] === "@") {
+                            } else if (key.charAt(0) === "@") {
                                 attr = key.slice(1);
                                 $tag.data(attr, options[key]);
                             } else if (key === "class" && $.isArray(options[key])) {
