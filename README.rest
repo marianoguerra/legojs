@@ -1,0 +1,60 @@
+legojs - generate HTML with CSS-like selectors
+==============================================
+
+legojs is an js module that allows to generate complex HTML using
+a syntax that is similar to CSS selectors.
+
+legojs is inspired by zen-coding: https://code.google.com/p/zen-coding/
+
+get it
+------
+
+::
+
+    git clone https://github.com/marianoguerra/legojs
+
+build it
+--------
+
+this builds the parser for the expressions
+
+::
+
+    cd legojs
+    ./build.sh
+    
+try it
+------
+
+http://marianoguerra.github.com/legojs/
+
+test it
+-------
+
+http://marianoguerra.github.com/legojs/test
+
+or open test/index.html in your browser
+
+use it
+------
+
+there are two ways of using it, one is like any normal .js file, just add
+a script tag and import it (see test/index.html for an example)
+
+the other one is using an AMD loader like requirejs, in this case you
+just require the lib, it will return you the legojs function standalone and
+will add the function to the jquery object in $.lego so you can just ignore it
+and use $.lego or use the returned function itself.
+
+for an example of out to use it with requirejs see the main page at index.html
+
+author
+------
+
+Mariano Guerra
+
+license
+-------
+
+BSD (+ optional beer to the author)
+
