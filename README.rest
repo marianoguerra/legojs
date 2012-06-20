@@ -16,15 +16,13 @@ get it
 build it
 --------
 
+this builds the parser for the expressions
+
 ::
 
     cd legojs
     ./build.sh
     
-for the minification you will need uglifyjs::
-
-        npm install -g uglifyjs
-
 try it
 ------
 
@@ -36,6 +34,19 @@ test it
 http://marianoguerra.github.com/legojs/test
 
 or open test/index.html in your browser
+
+use it
+------
+
+there are two ways of using it, one is like any normal .js file, just add
+a script tag and import it (see test/index.html for an example)
+
+the other one is using an AMD loader like requirejs, in this case you
+just require the lib, it will return you the legojs function standalone and
+will add the function to the jquery object in $.lego so you can just ignore it
+and use $.lego or use the returned function itself.
+
+for an example of out to use it with requirejs see the main page at index.html
 
 author
 ------
