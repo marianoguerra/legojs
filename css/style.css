@@ -48,6 +48,10 @@ strong{
  margin: 1%;
 }
 
+pre{
+ background-color: #eee;
+}
+
 .output label{
  margin: 0;
  font-weight: bold;

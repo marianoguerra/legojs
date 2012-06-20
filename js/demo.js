@@ -45,6 +45,7 @@ require(["jquery", "ace", "../src/jquery.lego", "prettyPrint", "json"], function
         var code = getCode();
 
         updateOutput(code);
+        prettyPrint();
     }
 
     function onLoadClick() {
