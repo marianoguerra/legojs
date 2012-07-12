@@ -123,6 +123,10 @@
         }
     };
 
+    $.lego.error = function (msg) {
+        alert(msg);
+    };
+
     $.lego.parser = legoparser;
     return $.lego;
 }));
