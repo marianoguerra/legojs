@@ -99,7 +99,7 @@
                                     if ($.inArray(attr, events) !== -1) {
                                         $tag[attr](options[key]);
                                     } else if ($.isFunction(options[key])) {
-                                        $.bind(attr, options[key]);
+                                        $tag.bind(attr, options[key]);
                                     } else {
                                         $.lego.error("unknown internal attribute " + attr);
                                     }
